@@ -6,7 +6,9 @@ define([
     template: tmpl,
     data: function () {
       return {
-        menuList: []
+        menuList: [],
+        indexNoticeTabsActive: '1',
+        indexPersonalTabsActive: '1'
       }
     },
     created: function () {

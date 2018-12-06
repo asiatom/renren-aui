@@ -1,16 +1,17 @@
 <main class="aui-main">
   <!-- standard 标准 -->
-  <div v-show="mainType === 'standard'" class="aui-main__hd">
+  <div v-show="$store.state.mainType === 'standard'" class="aui-main__hd">
     <el-breadcrumb separator="/">
       <el-breadcrumb-item>renren-aui</el-breadcrumb-item>
       <el-breadcrumb-item>首页</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
-  <div v-show="mainType === 'standard'" class="aui-main__bd">
-    <include src="./templates/pages/index.html"></include>
+  <div v-show="$store.state.mainType === 'standard'" class="aui-main__bd">
+    <!-- <include src="./templates/pages/index.html"></include> -->
+    <home></home>
   </div>
   <!-- tabs 标签页 -->
-  <el-dropdown v-show="mainType === 'tabs'" class="aui-main-tabs__tool">
+  <el-dropdown v-show="$store.state.mainType === 'tabs'" class="aui-main-tabs__tool">
     <i class="el-icon-arrow-down"></i>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item>关闭当前标签页</el-dropdown-item>
@@ -18,10 +19,11 @@
       <el-dropdown-item>关闭全部标签页</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
-  <el-tabs v-show="mainType === 'tabs'" class="aui-main-tabs aui-tabs" v-model="mainTabsActive">
+  <el-tabs v-show="$store.state.mainType === 'tabs'" class="aui-main-tabs aui-tabs" v-model="$store.state.mainTabsActive">
     <el-tab-pane label="home" name="home" :closable="false" class="aui-main-tabs__pane--full">
       <svg slot="label" class="aui-content--tabs-icon-nav icon-svg" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
-      <include src="./templates/pages/index.html" path="."></include>
+      <!-- <include src="./templates/pages/index.html" path="."></include> -->
+      <home></home>
     </el-tab-pane>
     <el-tab-pane label="标签页2" name="2" closable>标签页2</el-tab-pane>
     <el-tab-pane label="标签页3" name="3" closable>标签页3</el-tab-pane>

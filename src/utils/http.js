@@ -1,7 +1,7 @@
 define([
   'vue',
   'axios',
-  'js-cookie',
+  'cookie',
   'lodash',
   'qs'
 ], function(Vue, Axios, Cookies, _, Qs) {

@@ -1,7 +1,6 @@
 define([
-  'vue',
   'text!./aside.html'
-], function(Vue, tmpl) {
+], function(tmpl) {
   return {
     template: tmpl,
     methods: {

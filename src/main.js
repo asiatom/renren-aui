@@ -1,6 +1,6 @@
-var require = {
+require.config({
   baseUrl: './',
-  // urlArgs: 'v=' + (window.SITE_CONFIG.env === 'dev' ? new Date().getTime() : window.SITE_CONFIG.version),
+  urlArgs: 'v=' + (window.SITE_CONFIG.env === 'dev' ? new Date().getTime() : window.SITE_CONFIG.version),
   waitSeconds: 0,
   map: {
     '*': {
@@ -26,7 +26,7 @@ var require = {
     quill: 'plugins/q-2.0.2/q.min',
     text : 'plugins/require-text-2.0.15/text.min',
     screenfull: 'plugins/screenfull-3.3.2/screenfull.min',
-    vue: 'plugins/vue-2.5.17/vue.min',
+    vue: (window.SITE_CONFIG.env === 'dev' ? 'plugins/vue-2.5.17/vue' : 'plugins/vue-2.5.17/vue.min'),
     vueI18n: 'plugins/vue-i18n-8.1.0/vue-i18n.min',
     vueRouter: 'plugins/vue-router-3.0.1/vue-router.min',
     vuex: 'plugins/vuex-3.0.1/vuex.min'
@@ -37,8 +37,4 @@ var require = {
     vueRouter: { deps: ['vue', 'promise'] },
     vuex: { deps: ['vue', 'promise'] }
   }
-};
-
-if(typeof module !== 'undefined' && module.exports) {
-  module.exports = require;
-}
+});

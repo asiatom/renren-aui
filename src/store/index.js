@@ -41,24 +41,7 @@ define([
       // 主标签页, 选中
       mainTabsActive: 'home',
       // 主标签页, 头部固定状态
-      mainTabsHeaderFixed: false,
-      // 皮肤, 默认值
-      skin: 'orange',
-      // 皮肤, 列表
-      skinList: [
-        { name: 'blue'     , color: '#3E8EF7', remark: '蓝色' },
-        { name: 'brown'    , color: '#997B71', remark: '棕色' },
-        { name: 'cyan'     , color: '#0BB2D4', remark: '青色' },
-        { name: 'gray'     , color: '#757575', remark: '灰色' },
-        { name: 'green'    , color: '#11C26D', remark: '绿色' },
-        { name: 'indigo'   , color: '#667AFA', remark: '靛青色' },
-        { name: 'orange'   , color: '#EB6709', remark: '橙色' },
-        { name: 'pink'     , color: '#F74584', remark: '粉红色' },
-        { name: 'purple'   , color: '#9463F7', remark: '紫色' },
-        { name: 'red'      , color: '#FF4C52', remark: '红色' },
-        { name: 'turquoise', color: '#17B3A3', remark: '蓝绿色' },
-        { name: 'yellow'   , color: '#FCB900', remark: '黄色' }
-      ]
+      mainTabsHeaderFixed: false
     },
     mutations: {
       // 重置vuex本地储存状态

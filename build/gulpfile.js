@@ -222,3 +222,19 @@ gulp.task('create-element-theme', () => {
     }
   }
 })
+
+var rjs = require('requirejs')
+
+gulp.task('js-build', () => {
+  var config = require('../src/config.js')
+  rjs.optimize({
+    ...config,
+    ...{
+      baseUrl: '../src',
+      name: 'views/main',
+      optimize: 'none',
+      exclude: ['vue'],
+      out: './dist/views.js'
+    }
+  })
+});
