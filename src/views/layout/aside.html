@@ -1,9 +1,9 @@
 <aside class="aui-aside">
   <div class="aui-aside__inner">
     <el-menu
-      v-if="asideMenuVisible"
+      v-if="$store.state.asideMenuVisible"
       class="aui-aside__menu"
-      :default-active="asideMenuActive"
+      :default-active="$store.state.asideMenuActive"
       :collapse="asideFold"
       :unique-opened="true"
       :collapse-transition="false"

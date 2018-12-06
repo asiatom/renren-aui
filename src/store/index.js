@@ -10,10 +10,6 @@ define([
     state: {
       // 滚动条, 滚动高度
       scrollbarHeight: 0,
-      // DOM Element对象
-      DOM: {},
-      // 加载中
-      loading: true,
       // 容器, 居中
       wrapperCenter: false,
       // 头部, 皮肤 (white 白色 / colorful 鲜艳)
@@ -32,10 +28,6 @@ define([
       asideMenuVisible: true,
       // 侧边, 菜单选中
       asideMenuActive: 'home',
-      // 搜索, 显示状态
-      searchVisible: false,
-      // 搜索, 值
-      search: '',
       // 控制台, 固定状态
       controlFixed: false,
       // 控制台, 打开状态

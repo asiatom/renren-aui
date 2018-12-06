@@ -1,9 +1,14 @@
 define([
-  'vue',
   'text!./header.html'
-], function(Vue, tmpl) {
+], function(tmpl) {
   return {
     template: tmpl,
+    data () {
+      return {
+        searchVisible: false,
+        search: ''
+      }
+    },
     methods: {
     }
   };

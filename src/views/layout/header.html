@@ -6,7 +6,7 @@
   <div class="aui-header__bd">
     <!-- aui-header__menu left -->
     <el-menu class="aui-header__menu aui-header__menu--left" mode="horizontal">
-      <el-menu-item v-if="!asideTop" index="1" @click="asideFold = !asideFold">
+      <el-menu-item v-if="!$store.state.asideTop" index="1" @click="$store.state.asideFold = !$store.state.asideFold">
         <svg class="icon-svg aui-header__icon-menu aui-header__icon-menu--rz180" aria-hidden="true"><use xlink:href="#icon-outdent"></use></svg>
       </el-menu-item>
     </el-menu>
@@ -36,7 +36,7 @@
       </el-submenu>
       <el-submenu index="3" :popper-append-to-body="false">
         <template slot="title">
-          <img class="aui-avatar" src="@@path/img/avatar.png">
+          <img class="aui-avatar" src="./img/avatar.png">
           <span>admin</span>
         </template>
         <el-menu-item index="3-1">修改密码</el-menu-item>
