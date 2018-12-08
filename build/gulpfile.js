@@ -227,14 +227,45 @@ var rjs = require('requirejs')
 
 gulp.task('js-build', () => {
   var config = require('../src/config.js')
-  rjs.optimize({
-    ...config,
-    ...{
+  gulp.src('../src/**/*.js')
+    .pipe($.requirejsOptimize({
       baseUrl: '../src',
-      name: 'views/main',
-      optimize: 'none',
-      exclude: ['vue'],
-      out: './dist/views.js'
-    }
-  })
-});
+      mainConfigFile: '../src/config.js',
+      exclude: ['text']
+    }))
+    .pipe(gulp.dest('./dist'));
+  // console.log(Object.keys(config.paths))
+  // rjs.optimize({
+  //   ...config,
+  //   ...{
+  //     baseUrl: '../src',
+  //     // name: 'app',
+  //     optimize: 'none',
+  //     // exclude: Object.keys(config.paths),
+  //     out: './dist/views.js'
+  //   }
+  // })
+  // var dir = '../src/views'
+  // console.log(fs.existsSync(dir))
+  // if(fs.existsSync(dir)) {
+  //   console.log(fs.readdirSync(dir))
+  //   fs.readdirSync(dir, function (err, files) {
+  //     if (err) {
+  //       console.log(err)
+  //       return
+  //     }
+  //     console.log(files.length, 111)
+  //     var count = files.length;
+  //     var results = {};
+  //     files.forEach(function (filename) {
+  //       fs.readFile(filename, function (data) {
+  //         results[filename] = data;
+  //         count--;
+  //         if (count <= 0) {
+  //           // 对所有文件进行处理
+  //         }
+  //       });
+  //     });
+  //   })
+  // }
+})
